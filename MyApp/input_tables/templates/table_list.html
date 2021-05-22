@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Upload your tables</h2>
+    <p>
+      <a href="{% url 'class_upload_table' %}" class="btn btn-primary">Upload table</a>
+    </p>
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Photo of your table</th>
+        <th>Title</th>
+        <th>Uploading time</th>
+        <th>Download</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for table in tables %}
+        <tr>
+          <td>
+            {% if table.excel_to_table_image %}
+              <img src="{{ table.excel_to_table_image.url }}" alt="{{ table.title }}" style="width:200px;">
+            {% else %}
+              <span class="text-muted">
+                <a href="{% url 'to_table' %}" class="badge badge-info">Your table is here</a>
+              </span>
+            {% endif %}
+          </td>
+          <td>{{ table.title }}</td>
+          <td>{{ table.time }}</td>
+          <td>
+            <a href="{{ table.excel.url }}" class="btn btn-primary btn-sm" target="_blank">
+              Download table
+            </a>
+          </td>
+          <td>
+            <form method="post" action="{% url 'delete_tables' table.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
