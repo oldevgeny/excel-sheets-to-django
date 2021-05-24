@@ -4,10 +4,17 @@
 
 #### 1) Activate your virtual environment:
 
-
+##### For Mac:
 ```python
 python3 -m venv venv
 source venv/bin/activate
+```
+
+##### For Windows:
+```python
+pip install virtualenv
+virtualenv venv
+venv\Scripts\activate
 ```
 
 
