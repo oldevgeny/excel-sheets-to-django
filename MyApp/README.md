@@ -1,6 +1,9 @@
+## Python version -- 3.8.5
+
 ## HOW TO INSTALL:
 
 #### 1) Activate your virtual environment:
+
 
 ```python
 python3 -m venv venv
