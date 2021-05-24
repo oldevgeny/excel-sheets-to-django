@@ -8,7 +8,6 @@
   <table class="table mb-0">
     <thead>
       <tr>
-        <th>Title</th>
         <th>Uploading time</th>
         <th>Download</th>
         <th>Delete</th>
@@ -17,7 +16,6 @@
     <tbody>
       {% for table in tables %}
         <tr>
-          <td>{{ table.title }}</td>
           <td>{{ table.time }}</td>
           <td>
             <a href="{{ table.excel.url }}" class="btn btn-primary btn-sm" target="_blank">
