@@ -8,7 +8,6 @@
   <table class="table mb-0">
     <thead>
       <tr>
-        <th>Photo of your table</th>
         <th>Title</th>
         <th>Uploading time</th>
         <th>Download</th>
@@ -18,15 +17,6 @@
     <tbody>
       {% for table in tables %}
         <tr>
-          <td>
-            {% if table.excel_to_table_image %}
-              <img src="{{ table.excel_to_table_image.url }}" alt="{{ table.title }}" style="width:200px;">
-            {% else %}
-              <span class="text-muted">
-                <a href="{% url 'to_table' %}" class="badge badge-info">Your table is here</a>
-              </span>
-            {% endif %}
-          </td>
           <td>{{ table.title }}</td>
           <td>{{ table.time }}</td>
           <td>
