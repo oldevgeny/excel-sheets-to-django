@@ -1,5 +1,3 @@
-import pandas as pd
-
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView
 from django.urls import reverse_lazy
