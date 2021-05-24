@@ -1,35 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Upload your tables</h2>
-    <p>
-      <a href="{% url 'class_upload_table' %}" class="btn btn-primary">Upload table</a>
-    </p>
-  <table class="table mb-0">
+<h2>Upload your tables</h2>
+<p>
+    <a href="{% url 'class_upload_table' %}" class="btn btn-primary">Upload table</a>
+</p>
+<table class="table mb-0">
     <thead>
-      <tr>
+    <tr>
         <th>Uploading time</th>
         <th>Download</th>
         <th>Delete</th>
-      </tr>
+    </tr>
     </thead>
     <tbody>
-      {% for table in tables %}
-        <tr>
-          <td>{{ table.time }}</td>
-          <td>
+    {% for table in tables %}
+    <tr>
+        <td>{{ table.time }}</td>
+        <td>
             <a href="{{ table.excel.url }}" class="btn btn-primary btn-sm" target="_blank">
-              Download table
+                Download table
             </a>
-          </td>
-          <td>
+        </td>
+        <td>
             <form method="post" action="{% url 'delete_tables' table.pk %}">
-              {% csrf_token %}
-              <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
             </form>
-          </td>
-        </tr>
-      {% endfor %}
+        </td>
+    </tr>
+    {% endfor %}
     </tbody>
-  </table>
+</table>
 {% endblock %}

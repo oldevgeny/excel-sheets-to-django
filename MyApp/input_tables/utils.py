@@ -16,6 +16,7 @@ def file_names_list():
             file_names_list.append(table.excel)
     return file_names_list
 
+
 def excel_to_html_table():
     list_of_names = file_names_list()
     htmls_str = ""
@@ -36,7 +37,7 @@ def excel_to_html_table():
             pass
         except ValueError:
             pass
-            htmls_str +="""
+            htmls_str += """
             <p class="font-weight-bold">
                 There should have been a table formed from your file.
                 But file is not a recognized excel file.

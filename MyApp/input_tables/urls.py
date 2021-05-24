@@ -5,7 +5,6 @@ from input_tables import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns = [
     path('<int:pk>/', views.delete_tables, name='delete_tables'),
     path('excel-to-table/', views.excel_to_table, name='to_table'),
