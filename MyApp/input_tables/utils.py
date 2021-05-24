@@ -31,6 +31,7 @@ def excel_to_html_table():
             df.replace(np.nan, '-', inplace=True)
             df = df.to_html(index=False)
             htmls_list.append(df)
+            htmls_list.append('<hr>')
         except FileNotFoundError:
             pass
         except ValueError:
@@ -40,5 +41,6 @@ def excel_to_html_table():
                 There should have been a table formed from your file.
                 But file is not a recognized excel file.
                 Please, delete your last file and upload correct file.
-            </p>""")
+            </p>
+            <hr>""")
     return ''.join(htmls_list)

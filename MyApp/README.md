@@ -1,6 +1,15 @@
-## Python version -- 3.8.5
+## Project description:
+
+An application to upload excel-files and restructuring them as tables in Django templates
+
+###### For details you can read the Task.pdf file
+
+
 
 ## HOW TO INSTALL:
+
+### Python version -- 3.8.5
+
 
 #### 1) Activate your virtual environment:
 
