@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView
 from django.urls import reverse_lazy
 
-from .forms import TableForm
+from .forms import Table_Form
 from .models import Table
 from .utils import excel_to_html_table
 
@@ -18,14 +18,14 @@ def delete_tables(request, pk):
         table.delete()
     return redirect('table_list')
 
-class TableListView(ListView):
+class Table_List_View(ListView):
     model = Table
     template_name = 'table_list.html'
     context_object_name = 'tables'
 
 
-class UploadTableView(CreateView):
+class Upload_Table_View(CreateView):
     model = Table
-    form_class = TableForm
+    form_class = Table_Form
     success_url = reverse_lazy('table_list')
     template_name = 'upload_table.html'

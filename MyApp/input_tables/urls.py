@@ -10,8 +10,8 @@ urlpatterns = [
     path('<int:pk>/', views.delete_tables, name='delete_tables'),
     path('excel-to-table/', views.excel_to_table, name='to_table'),
 
-    path('', views.TableListView.as_view(), name='table_list'),
-    path('upload/', views.UploadTableView.as_view(), name='class_upload_table'),
+    path('', views.Table_List_View.as_view(), name='table_list'),
+    path('upload/', views.Upload_Table_View.as_view(), name='class_upload_table'),
 ]
 
 if settings.DEBUG:

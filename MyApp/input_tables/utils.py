@@ -33,9 +33,9 @@ def excel_to_html_table():
             df = df.to_html(index=False)
             htmls_str += df
         except FileNotFoundError:
-            print("FileNotFoundError")
+            pass
         except ValueError:
-            print("File is not a recognized excel file")
+            pass
             htmls_str +="""
             <p class="font-weight-bold">
                 There should have been a table formed from your file.
