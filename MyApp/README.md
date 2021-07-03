@@ -30,7 +30,7 @@ venv\Scripts\activate
 #### 2) Clone the repository to your local machine:
 
 ```python
-git clone https://github.com/oldevgeny/JuniorBackendDeveloper-Python_testing.git
+git clone https://github.com/oldevgeny/excel-sheets-to-django.git
 ```
 
 
